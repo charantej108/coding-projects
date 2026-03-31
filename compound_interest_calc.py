@@ -1,0 +1,11 @@
+inital_amount = float(input("Enter you initial amount"))
+yearly_interest_rate = float(input("What is your yearly interest rate as a percentage"))
+yearly_interest_rate = 1 + (yearly_interest_rate / 100)
+number_of_years = int(input("How many years?"))
+yearly_inflation_rate = float(input("what is the yearly infation rate as a percentage"))
+yearly_inflation_rate = 1 + (yearly_inflation_rate / 100)
+for i in range(1, number_of_years + 1):
+    bank_balance_before_inflation = inital_amount*(yearly_interest_rate**i)
+    print(f"\nYour bank balance at the end of year {i} is £{bank_balance_before_inflation:.2f}")
+    bank_balance_after_inflation = bank_balance_before_inflation/(yearly_inflation_rate**i)
+    print(f"your real value at the end of year {i} is £{bank_balance_after_inflation:.2f}")
