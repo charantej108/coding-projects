@@ -1,0 +1,17 @@
+import math
+condition = True
+while condition:
+    angle = float(input("Enter the angle of projectile"))
+    velocity = float(input("What is the velocity or speed of the projectile"))
+    angle = math.radians(angle)
+    gravity = 9.81
+    horizontal_distance = ((velocity**2)*(math.sin(2*angle)))/gravity
+    max_height = ((velocity**2)*(math.sin(angle)**2))/(2*gravity)
+    print(f"Horizontal_distance: {horizontal_distance:.1f}m")
+    print(F"Max_height: {max_height:.1f}m")
+    target_hit = 5
+    if horizontal_distance < 4.5 or horizontal_distance > 5.5:
+        print("MISS - TRY AGAIN")
+    else:
+        print("TARGET HIT")
+        condition = False
